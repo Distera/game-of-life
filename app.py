@@ -1,11 +1,12 @@
 import pygame
 from copy import deepcopy
 from numpy import genfromtxt
+import os
 
 tile_size = 20
 FPS = 6
 
-current_field = genfromtxt('map.csv', delimiter=',')
+current_field = genfromtxt(os.getenv('MAP_PATH', 'maps/map1.csv'), delimiter=',')
 tiles_grid_height, tiles_grid_width = current_field.shape
 RES = screen_width, screen_height = tiles_grid_width * tile_size, tiles_grid_height * tile_size
 
