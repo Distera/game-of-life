@@ -17,14 +17,14 @@ clock = pygame.time.Clock()
 next_field = [[0 for i in range(tiles_grid_width)] for j in range(tiles_grid_height)]
 
 
-def check_cell(current_field, x, y):
+def check_cell(field, x, y):
     count = 0
     for j in range(y - 1, y + 2):
         for i in range(x - 1, x + 2):
-            if current_field[j][i]:
+            if field[j][i]:
                 count += 1
 
-    if current_field[y][x]:
+    if field[y][x]:
         count -= 1
         if count == 2 or count == 3:
             return 1
